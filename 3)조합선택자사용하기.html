@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조합선택자사용하기</title>
+    <!--그룹선택자-->
+    <style>
+        p,#title,red{
+            color: red;
+        }
+    </style>
+    <!--자식선택자-->
+    <!--클래스 속성값이 box인 요소와 자식관계인 p태그로 작성된 요소만 선택자로 지정한다-->
+    <style>
+        .box > p{
+            color: red;
+        }
+    </style>
+    <!--하위선택자-->
+    <!---->
+    <style>
+        div p{
+            color: red;
+        }
+    </style>
+    <!--인접형제 선택자-->
+    <style>
+        h1 + h2{
+            color: blue;
+        }
+    </style>
+
+    <!--일반 형제 선택자-->
+    <style>
+        h1~h2{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>lorem 1</p>
+        <ul>
+            <li>
+                <p>lorem 2</p>
+            </li>
+            <li>
+                <p>lorem 3</p>
+            </li>
+        </ul>
+    </div>
+    <p>lorem 4</p>
+
+    <h1>lorem1</h1>
+    <h2>lorem2</h2> <!--이거만 바뀜-->
+    <h2>lorem3</h2>
+
+    <h1>lorem1</h1>
+    <h2>lorem2</h2> <!--이거바뀜-->
+    <h2>lorem3</h2> <!--이거바뀜-->
+
+</body>
+</html>
