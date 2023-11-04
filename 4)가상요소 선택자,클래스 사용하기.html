@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소 선택자,클래스 사용하기</title>
+
+    <style>
+        p::before{
+            content: '<before>';
+            color: aqua;
+        }
+        p::after{
+            content: '<after>';
+        }
+    </style>
+    <!--링크가상클래스 선택자-->
+    <style>
+        a:link{
+            color:orange;
+        }
+        a:visited{
+            color:green;
+        }
+    </style>
+    <!--동적가상클래스 선택자-->
+    <style>
+        p:hover{
+            color: red;
+        }
+        p:active{
+            color: blue;
+        }
+
+        button:active{
+            color: blueviolet;
+        }
+    </style>
+
+    <!--입력요소 가상클래스 선택자-->
+    <style>
+        /*focus 입력요소에 커서가 활성화되면 스타일 적용*/
+        input:focus{
+            color: red;
+        }
+        /*checked 체크바스가 표시되어 있으면 스타일 적용*/
+        input:checked + label{
+            color: red;
+        }
+        /*disabled 상호작용 요소가 비활성화되어 있으면 스타일 적용*/
+        input:disabled, button:disabled{
+            background-color:#ccc;
+        }
+
+        /*enabled 상호작용 요소가 활성화되어 있으면 스타일 적용*/
+        input:enabled, button:enabled{
+            background-color:#ccc;
+        }
+    </style>
+    <!--구조적 가상클래스 선택자-->
+    <style>
+        /*첫 번째 자식요소선택, 마지막 자식요소 선택*/
+        li:first-child{
+            color:red;
+        }
+        li:last-child{
+            color: red;
+        }
+
+        /*E 요소가 부모의 모든 자식요소중 n번쨰 자식 요소가 맞으면 선택*/
+        p:nth-child(1){
+            color: red;
+        }
+        /*E 요소가 부모의 모든 자식요소중 끝에서 n번쨰 자식 요소가 맞으면 선택*/
+        p:nth-last-child(1){
+            color: blue;
+        }
+        /*부모요소의 자식요소 중 n번째로 등장하는 E요소 선택*/
+        p:nth-of-type(2){
+            color:brown;
+        }
+        /*부모요소의 자식요소 중 끝에서 n번째로 등장하는 E요소 선택*/
+        p:nth-last-of-type(1){
+            color:gold;
+        }
+        /*부모의 자식중 천 번째로 등장하는 E요소, 마지막에 나오는 E요소*/
+        p:first-of-type{
+            color: darkorchid;
+        }
+        p:last-of-type{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <p>lorem, ipsum dolor.</p>
+
+    <a href="beach.jpg">Go</a>
+
+    <p>hover,active</p>
+
+    <button>active</button>    
+
+    <input type="text">
+
+    <input type="checkbox" id="userid">
+    <label for="userid">아이디</label>
+
+    <input type="text" disabled>
+    <button disabled>버튼</button>
+
+    <input type="text" >
+    <button >버튼</button>
+
+    <ul>
+        <li>lorem 1</li>
+        <li>lorem 2</li>
+        <li>lorem 3</li>
+        <li>lorem 4</li>
+    </ul>
+    <div>
+        <p>lorem 1</p>
+        <p>lorem 1</p>
+    </div>
+
+    <div>
+        <p>lorem 1</p>
+        <p>lorem 1</p>
+    </div>
+
+    <p>lorem 0</p>
+  <div>
+    <p>lorem 1</p>
+    <span>span 1</span>
+    <p>lorem 2</p>
+  </div>
+  <div>
+    <p>lorem 3</p>
+    <span>span 2</span>
+    <span>span 3</span>
+    <p>lorem 4</p>
+  </div>
+</body>
+</html>
